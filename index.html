@@ -2,25 +2,23 @@
 <html lang = "en-US">
 <head>
   <title>iPhone 7 Plus vs Galaxy Note 7</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/css/style.css" />
   <script src="stylesheets/jquery-3.1.1.js"></script>
-  <script>
-  $(document).ready(function(){
-
-});
-  </script>
+  <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
 </head>
 <body>
   <header>Battle of the Phablets</header>
-  <div>
-    <table id="images">
+  <div align="center" >
+      <img class="fight" src="images/fight.jpg">
+  </div>
+
+  <div class="phones">
+    <table class="specs">
       <tr>
         <th></th>
         <th><img src="images/Black-Onyx.jpg"></th>
-        <th><img src="images/iPhone7Plus.jpeg"></th>
+        <th><img src="images/iPhone7Plus.jpg"></th>
        </tr>
-    </table>
-    <table id="specs">
      <tr>
       <th>Specs</th>
       <th>Galaxy Note 7</th>
@@ -115,7 +113,29 @@
     </table>
   </div>
   <audio autoplay>
-    <source src="media/battlemusic.mp3" type="audio/mpeg">
+    <source src="media/boxing_bel.mp3" type="audio/mpeg">
   </audio>
+
+    <audio  id="audio">
+      <source src="media/battlemusic.mp3" type="audio/mpeg">
+    </audio>
 </body>
+<script>
+$(document).ready(function(){
+
+  $("header").slideToggle(1000, "linear");
+  $(".fight").delay(1000).fadeIn(1000);
+  $(".fight").click(function(){
+     $(this).slideToggle(2000);
+    $(".phones").slideToggle(2000);
+    document.getElementById("audio").play();
+
+  });
+  //   $("body").animate({
+  //     scrollTop: $(".phones").offset().top
+  //   }, 2500);
+  // });
+
+});
+</script>
 </html>
