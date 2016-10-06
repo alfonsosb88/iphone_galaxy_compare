@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang = "en-US">
 <head>
-  <link rel="stylesheet" href="ism/css/my-slider.css"/>
-<script src="ism/js/ism-2.2.min.js"></script>
-<link rel="stylesheet" href="ism2/css/my-slider.css"/>
   <title>iPhone 7 Plus vs Galaxy Note 7</title>
+
   <link rel="stylesheet" type="text/css" href="stylesheets/css/style.css" />
   <script src="stylesheets/jquery-3.1.1.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
@@ -21,44 +19,16 @@
         <th class="blank">
           <button class="button">Advantages</button>
         </th>
-        <th><div class="ism-slider" id="my-slider">
-  <ol>
-    <li>
-      <img src="ism/image/slides/_u/1475613760335_150334.jpg">
-      <div class="ism-caption ism-caption-0">Hey There!</div>
-    </li>
-    <li>
-      <img src="ism/image/slides/_u/1475614033368_924319.jpg">
-      <div class="ism-caption ism-caption-0">How You doin?</div>
-    </li>
-    <li>
-      <img src="ism/image/slides/_u/1475613760335_150334.jpg">
-      <div class="ism-caption ism-caption-0">See you later</div>
-    </li>
-  </ol>
-</div>
-<p class="ism-badge" id="my-slider-ism-badge"><a class="ism-link" href="http://imageslidermaker.com" rel="nofollow"></a></p>
+
+<th class="note7">
+  <img src="images/Black-Onyx.png">
 </th>
-        <th><div class="ism-slider" id="iphone7plus">
-  <ol>
-    <li>
-      <img src="ism2/image/slides/_u/1475614759174_219151.jpg">
-      <div class="ism-caption ism-caption-0">How you doin?</div>
-    </li>
-    <li>
-      <img src="ism2/image/slides/_u/1475614764493_54526.jpg">
-      <div class="ism-caption ism-caption-0">Im good</div>
-    </li>
-    <li>
-      <img src="ism2/image/slides/_u/1475614769520_816648.jpg">
-      <div class="ism-caption ism-caption-0">Goodbye</div>
-    </li>
-  </ol>
-</div>
-<p class="ism-badge" id="iphone7plus-ism-badge"><a class="ism-link" href="http://imageslidermaker.com" rel="nofollow"></a></p>
+
+<th class="iphone7">
+        <img src="images/iPhone7Plus.jpg">
 </th>
        </tr>
-     <tr>
+     <tr class="row1">
       <th class="spec">Name</th>
       <th>Galaxy Note 7</th>
       <th>iPhone 7 Plus</th>
@@ -151,12 +121,9 @@
 
     </table>
   </div>
-  <audio id="bell" autoplay>
-    <source src="media/boxing_bell.mp3" type="audio/mpeg">
-  </audio>
 
-    <audio  id="audio">
-      <source src="media/HBO_Boxing.mp3" type="audio/mpeg">
+    <audio id="audio" autoplay>
+      <source src="media/Left-Hook.mp3" type="audio/mpeg">
     </audio>
 </body>
 <script>
@@ -166,9 +133,12 @@ $(document).ready(function(){
   $(".fight").delay(1000).fadeIn(1000);
 
   $(".fight").click(function(){
-     $("this").slideToggle(2000);
-    $(".phones").slideToggle(2000);
-    document.getElementById("audio").play();
+    $(this).animate({left:"950px"});
+    // $(".specs").animate({left:"0"});
+    $(".phones").animate({left:"0"});
+    //  $("this").slideToggle(2000);
+    // $(".phones").slideToggle(2000);
+    // document.getElementById("audio").play();
   });
   $("button").click(function(){
      $(".features_fave").css("background-color", "yellow");
@@ -182,8 +152,6 @@ $(document).ready(function(){
      $(".battery_fave").css("background-color", "yellow");
      $(".wireless_charging_fave").css("background-color", "yellow");
   });
-  if($(".note_img").attr)
-  $(function() {
       $("#audio").prop("volume", 0.0);
       $("#audio").on("timeupdate", function() {
           if (this.currentTime < 2) {
@@ -192,7 +160,6 @@ $(document).ready(function(){
               $(this).stop().animate({volume: 0.0}, 1000);
           }
       });
-  });
 });
 </script>
 </html>
