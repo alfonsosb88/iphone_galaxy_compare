@@ -1,19 +1,21 @@
 body{
   display: block;
   overflow-x: hidden;
+
 }
 header{
   display: none;
   text-align: center;
   margin-top: 50px;
-  font-size: 2.8em;
+  font-size: 3.5em;
   font-family: 'Allerta Stencil', sans-serif;
 }
 .phones{
-  margin-left: auto;
-  margin-right: auto;
-  left:2000px;
-  position: relative
+  /*margin-left: auto;
+  margin-right: auto;*/
+  left:3000px;
+  position: relative;
+  transform: translateX(-50%);
 }
 
 img{
@@ -28,6 +30,13 @@ width: 200px
   font-size: 20px;
   text-align: center;
    empty-cells: hide;
+    transition: 0.5s;
+
+}
+
+tr:hover{
+background-color: navy;
+color: white
 }
 .fight{
   position:relative;

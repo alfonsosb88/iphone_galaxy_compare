@@ -13,8 +13,8 @@
       <img class="fight" src="images/fight.jpg">
   </div>
 
-  <div class="phones">
-    <table class="specs">
+  <!-- <div class="phones"> -->
+    <table class="specs phones">
       <tr>
         <th class="blank">
           <button class="button">Advantages</button>
@@ -28,7 +28,7 @@
         <img src="images/iPhone7Plus.jpg">
 </th>
        </tr>
-     <tr class="row1">
+     <tr>
       <th class="spec">Name</th>
       <th>Galaxy Note 7</th>
       <th>iPhone 7 Plus</th>
@@ -120,7 +120,10 @@
      </tr>
 
     </table>
-  </div>
+  <!-- </div> -->
+  <audio id="rocky" autoplay>
+    <source src="media/Rocky.mp3" type="audio/mpeg">
+  </audio>
 
     <audio id="audio" autoplay>
       <source src="media/Left-Hook.mp3" type="audio/mpeg">
@@ -128,18 +131,31 @@
 </body>
 <script>
 $(document).ready(function(){
-  // document.getElementById("bell").delay(1000).play();
+var rocky = document.getElementById("rocky");
+var punch = document.getElementById("audio");
+$("tr").hover(function() {
+		punch.play();
+	});
+
   $("header").slideToggle(1000, "linear");
+
   $(".fight").delay(1000).fadeIn(1000);
 
   $(".fight").click(function(){
-    $(this).animate({left:"950px"});
-    // $(".specs").animate({left:"0"});
-    $(".phones").animate({left:"0"});
+    $(this).animate({left:"950px"}, function(){
+      $(this).remove();
+      $(".phones").animate({left:"50%"}, function(){
+        punch.play();
+
+      });
+    });
+
+
     //  $("this").slideToggle(2000);
     // $(".phones").slideToggle(2000);
-    // document.getElementById("audio").play();
   });
+
+
   $("button").click(function(){
      $(".features_fave").css("background-color", "yellow");
      $(".rugged_fave").css("background-color", "yellow");
@@ -151,6 +167,7 @@ $(document).ready(function(){
      $(".front_camera_fave").css("background-color", "yellow");
      $(".battery_fave").css("background-color", "yellow");
      $(".wireless_charging_fave").css("background-color", "yellow");
+     punch.play();
   });
       $("#audio").prop("volume", 0.0);
       $("#audio").on("timeupdate", function() {
